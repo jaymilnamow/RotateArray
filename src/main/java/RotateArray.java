@@ -11,13 +11,12 @@ public class RotateArray {
 
         ArrayList<Integer> reorderedIntArray = new ArrayList<Integer>();
 
-        for(int i=intArray.length+1-x; i<intArray.length; i++) {
-            reorderedIntArray.add(i);
+        for(int i=intArray.length-x; i<intArray.length; i++) {
+            reorderedIntArray.add(intArray[i]);
         }
 
-        for (int j = 0; j < intArray.length+1-x; j++) {
-            reorderedIntArray.add(j);
-
+        for (int j = 0; j < intArray.length-x; j++) {
+            reorderedIntArray.add(intArray[j]);
         }
 
         return reorderedIntArray;
@@ -25,8 +24,8 @@ public class RotateArray {
 
     public static void main(String[] args) {
 
-        int[] intArray = {1, 2, 3, 4, 5 , 6};
-        int x = 3;
+        int[] intArray = {1, 2, 3, 4, 5, 6};
+        int x = 2;
 
         RotateArray rotateArray = new RotateArray();
         List<Integer> reorderedIntArray = rotateArray.reorderArray(intArray,x);
