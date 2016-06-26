@@ -9,11 +9,11 @@ public class RotateArray {
 
         int[] reorderedIntArray = new int[intArray.length];
         for (int j = intArray.length - x; j < intArray.length; j++) {
-            reorderedIntArray[j - x] = intArray[j];
+            reorderedIntArray[j-intArray.length+x] = intArray[j];
 
         }
 
-        for (int i = 0; i < intArray.length - x; i++) {
+        for (int i = 0; i < intArray.length; i++) {
             reorderedIntArray[i + x] = intArray[i];
         }
 
@@ -22,7 +22,7 @@ public class RotateArray {
 
     public static void main(String[] args) {
 
-        int[] intArray = {1, 2, 3, 4};
+        int[] intArray = {1, 2, 3, 4, 5};
         int x = 2;
 
         RotateArray rotateArray = new RotateArray();
