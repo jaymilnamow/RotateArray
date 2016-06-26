@@ -1,20 +1,23 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by jaymilnamow on 6/25/16.
  */
 public class RotateArray {
 
-    int[] reorderArray(int[] intArray, int x) {
+    List<Integer> reorderArray(int[] intArray, int x) {
 
-        int[] reorderedIntArray = new int[intArray.length];
-        for (int j = intArray.length - x; j < intArray.length; j++) {
-            reorderedIntArray[j-intArray.length+x] = intArray[j];
+        ArrayList<Integer> reorderedIntArray = new ArrayList<Integer>();
 
+        for(int i=intArray.length+1-x; i<intArray.length; i++) {
+            reorderedIntArray.add(i);
         }
 
-        for (int i = 0; i < intArray.length; i++) {
-            reorderedIntArray[i + x] = intArray[i];
+        for (int j = 0; j < intArray.length+1-x; j++) {
+            reorderedIntArray.add(j);
+
         }
 
         return reorderedIntArray;
@@ -22,11 +25,11 @@ public class RotateArray {
 
     public static void main(String[] args) {
 
-        int[] intArray = {1, 2, 3, 4, 5};
-        int x = 2;
+        int[] intArray = {1, 2, 3, 4, 5 , 6};
+        int x = 3;
 
         RotateArray rotateArray = new RotateArray();
-        int[] reorderedIntArray = rotateArray.reorderArray(intArray,x);
-        System.out.print(Arrays.toString(reorderedIntArray));
+        List<Integer> reorderedIntArray = rotateArray.reorderArray(intArray,x);
+        System.out.print(Arrays.toString(reorderedIntArray.toArray()));
     }
 }
